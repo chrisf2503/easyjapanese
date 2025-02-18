@@ -1,0 +1,56 @@
+.title{
+    padding-left: 10px;
+}
+.signin{
+    padding-right: 10px;
+}
+.signup{
+    background-color: plum;
+    height: 30px;
+    border-radius: 10px;
+}
+.nav-bar{
+    width: 1403px;
+    height: 61px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 10px;
+}
+.content{
+    width: 928px;
+    height: 673px;
+    background-color: rgb(151, 146, 216);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.middle-image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+}
+.jpn{
+    width: 40px;
+    font-size: 40px;
+}
+.p1{
+    font-size: 40px;
+}
+.p2{
+    font-size: 32px;
+}
+.img1{
+    width: 462px;
+    height: 330px;
+    border-radius: 106px;
+}
