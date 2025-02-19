@@ -1,18 +1,25 @@
 import './StyleSheet/Home.css'
 import './StyleSheet/General.css'
 import cherryBloosm from './img/cherryBlossom.jpg'
-import Signin from '../Frontend/Signin';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Signin from './Frontend/Signin';
+
 function Home(){
     return (
         <body>
-            <nav class = "nav-bar">
-                <p class = "title">暢気日本語</p>
-                <div class = "buttons">
-                    <a href={<Signin/>} class="Signin">Sign in</a>
-                    {/* <!-- <p class="signin">Sign in</p> --> */}
-                    <button class="signup">Sign up</button>
-                </div>
-            </nav>
+            <Router>
+                <nav class = "nav-bar">
+                    <p class = "title">暢気日本語</p>
+                    <div class = "buttons">
+                        {/* Trying to fix the this in order to click an move on to the signin page */}
+                        | <Link to = "/">Sign in</Link>
+                        <button class="signup">Sign up</button>
+                    </div>
+                </nav>
+                <Routes>
+                    <Route path="/" element={<Signin />} />
+                </Routes>
+            </Router>
             <div class = "content">
                 <h1>暢気日本語</h1>
                 <div class="middle-image">
