@@ -16,3 +16,7 @@
 label{
     padding: 10px;
 }
+input{
+    border-color: rgb(51, 50, 50);
+    border-radius: 10px;
+}
