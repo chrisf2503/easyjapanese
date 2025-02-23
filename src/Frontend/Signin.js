@@ -3,26 +3,25 @@ import '../StyleSheet/Signin.css'
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
-// function Form(email, password){
-//     if(email.length > 0 && password.length>0){
-//         return true;
-//     }
-// }
+//Look into this in order to fix issues latter on in order to have multiple inputs
+//http://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable
 
 function Signin(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+
+    const [inputs, setInputs] = useState({});
     //here we would want to check if the email is valid and if the password
     //is a strong password
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // alert(`The email you entered was: ${email}`);
-        // alert(`The password you entered was: ${password}`);
-        console.log(email);
-        console.log(password);
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+
     }
-    
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        console.log(inputs)
+    }
     return(
         <div className = "body">
             <div className = "signIn">
@@ -31,12 +30,19 @@ function Signin(){
                     <form onSubmit={handleSubmit}>
                         <label for="email">
                             Email:<br/>
-                            <input type="text" id = "email" value = {email} onChange={(e => setEmail(e.target.value))}/>    
+                            <input 
+                            type="text" 
+                            name = "email" 
+                            value = {inputs.email} 
+                            onChange={handleChange}/>    
                         </label>
                         <br/><br/>
                         <label for="password">
                             Password:<br/>
-                            <input type="text" id = "password" value = {password} onChange={((e => setPassword(e.target.value)))}/>
+                            <input type="text" 
+                            name = "password" 
+                            value = {inputs.password} 
+                            onChange={handleChange}/>
                         </label>
                         <br/>
                         <input className='submit' type='submit'/>
